@@ -1,0 +1,41 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+@import 'shadcn/tailwind.css';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-destructive: var(--destructive);
+  --radius-sm: calc(var(--radius) * .6);
+  --radius-md: calc(var(--radius) * .8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+}
+
+:root { color-scheme: dark; --background: oklch(.11 .025 260); --foreground: oklch(.96 .01 260); --card: oklch(.15 .03 260); --card-foreground: oklch(.96 .01 260); --primary: oklch(.62 .2 255); --primary-foreground: oklch(.98 .01 260); --secondary: oklch(.2 .035 260); --secondary-foreground: oklch(.9 .02 260); --muted: oklch(.18 .03 260); --muted-foreground: oklch(.64 .035 260); --border: oklch(1 0 0 / 9%); --input: oklch(1 0 0 / 12%); --ring: oklch(.62 .2 255); --destructive: oklch(.65 .2 25); --radius: .75rem; }
+
+* { @apply border-border outline-ring/50; }
+html { background: #080d1a; }
+body { @apply bg-background text-foreground; min-width: 320px; }
+button, input { font: inherit; }
+button { cursor: pointer; }
+::selection { background: rgb(59 130 246 / .35); }
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgb(100 116 139 / .25); border-radius: 999px; }
+::-webkit-scrollbar-thumb:hover { background: rgb(100 116 139 / .45); }
+
+@layer base { * { @apply border-border; } }
